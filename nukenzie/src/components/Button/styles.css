@@ -34,3 +34,16 @@
   background-color: var(--color-primary-1);
   color: white;
 }
+
+.button-icon {
+  align-items: center;
+  background-color: var(--color-grey-2);
+  display: flex;
+  justify-content: center;
+  height: 22px;
+  width: 22px;
+}
+
+.button-icon:hover {
+  background-color: var(--color-grey-4);
+}
