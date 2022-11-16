@@ -5,3 +5,14 @@
   font-weight: var(--weight-3);
   text-align: center;
 }
+
+.button-primary {
+  background-color: var(--color-primary-1);
+  color: white;
+  padding: 14.5px 97px;
+}
+
+.button-primary:hover {
+  background-color: var(--color-primary-2);
+  color: var(--color-grey-1);
+}
