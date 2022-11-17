@@ -1,15 +1,40 @@
+import { useState } from "react";
 import "./styles.css";
-import { ButtonSecondary } from "./../Button";
 
-export default function Header() {
+export function Select ({options}) {
+  const [visibility, setVisibility] = useState(true);
+  const [selected, setSelected] = useState(options[0]);
+
   return (
-    <header className="header">
-      <div className="container">
-        <h1 className="logo">
-          <span className="pink">Nu</span> Kenzie
-        </h1>
-        <ButtonSecondary text="Início" />
+    <div className="select-wrapper"
+    onMouseLeave={
+      () => {
+        setVisibility(true);
+      }
+    }>
+      <div className="select"
+      onClick={
+        (event) => {
+          setVisibility(!visibility);
+
+          if (visibility) {
+            event.target.parentNode.classList.add("select-wrapper-focus");
+          }
+        }
+      }>
+        {selected}
       </div>
-    </header>
+      <div className="options" data-hidden={visibility}>
+        {
+          options.map((option, index) => {
+            return <div className="option" data-id={index}  value={option} data-clicked={selected == option ? true : false} onClick={
+              () => {
+                setSelected(option);
+              }
+            }>{option}</div>
+          })
+        }
+      </div>
+    </div>
   );
 }
