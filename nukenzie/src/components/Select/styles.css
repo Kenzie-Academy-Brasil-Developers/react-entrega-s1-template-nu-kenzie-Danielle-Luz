@@ -1,9 +1,15 @@
+.label {
+  font-size: var(--text-1);
+  display: block;
+}
+
 .select-wrapper {
   background-color: var(--color-grey-1);
   box-sizing: content-box;
   border: 1px solid transparent;
   border-radius: var(--radius-1);
   flex-grow: 1;
+  margin-top: 13px;
   padding: 15px 16px;
   position: relative;
   width: 128px;
