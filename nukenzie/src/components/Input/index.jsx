@@ -1,10 +1,11 @@
 import "./styles.css";
 
-export function InputText({ placeholder, label, info }) {
+export function InputText({ placeholder, label, info, name }) {
   return (
     <article>
       <label className="label">{label}</label>
       <input
+        name={name}
         className="input input-text"
         type="text"
         placeholder={placeholder}
@@ -14,16 +15,16 @@ export function InputText({ placeholder, label, info }) {
   );
 }
 
-export function InputValue({ onChange, label }) {
+export function InputValue({ label, name }) {
   return (
     <article>
       <label className="label">{label}</label>
       <div className="input-wrapper">
         <input
+          name={name}
           className="input input-text"
           type="number"
           placeholder="1"
-          onChange={onChange}
         />
         <span className="price-sign">R$</span>
       </div>
