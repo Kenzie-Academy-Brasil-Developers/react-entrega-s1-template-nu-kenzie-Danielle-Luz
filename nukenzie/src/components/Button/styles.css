@@ -48,3 +48,9 @@
 .button-icon:hover {
   background-color: var(--color-grey-4);
 }
+
+@media (max-width: 400px) {
+  .button-primary {
+    padding-inline: 0;
+  }
+}
