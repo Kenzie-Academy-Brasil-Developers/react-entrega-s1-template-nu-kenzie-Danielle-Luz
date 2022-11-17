@@ -3,10 +3,11 @@
   background-color: var(--color-grey-4);
   display: flex;
   justify-content: space-evenly;
-  height: 100vh;
+  min-height: 100vh;
+  padding: 0 30px 30px;
 }
 
-.main-content {
+.main {
   display: flex;
   flex-direction: column;
   max-width: 347px;
@@ -27,4 +28,15 @@
 
 .logo {
   color: white;
+}
+
+
+@media (max-width: 870px) {
+  .wrapper {
+    flex-direction: column-reverse;
+  }
+
+  .main {
+    max-width: 500px;
+  }
 }

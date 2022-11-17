@@ -109,3 +109,24 @@
     transform: translate(-120px, -20px);
   }
 }
+
+@media (max-width: 1000px) {
+  .circles img:nth-child(1) {
+    max-width: 250px;
+  }
+  
+  .circles img:nth-child(2) {
+    max-width: 300px;
+  }
+  
+  .circles img:nth-child(3) {
+    max-width: 380px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .banner {
+    display: none;
+  }
+}

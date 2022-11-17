@@ -5,7 +5,7 @@ import Banner from "../Banner";
 export default function Login() {
   return (
     <div className="wrapper">
-      <main className="main-content">
+      <main className="main">
         <h1 className="logo">
           <span className="pink">Nu</span> Kenzie
         </h1>
