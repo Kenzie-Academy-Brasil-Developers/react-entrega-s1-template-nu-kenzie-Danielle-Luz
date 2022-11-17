@@ -1,6 +1,7 @@
 .input {
   border: none;
   border-radius: var(--radius-1);
+  flex-grow: 1;
   font-size: var(--headline);
   padding: 11px 16px;
   outline: none;
@@ -19,4 +20,17 @@
 .input-text:focus {
   background-color: white;
   border-color: var(--color-grey-4);
+}
+
+.input-wrapper {
+  position: relative;
+  width: fit-content;
+}
+
+.price-sign {
+  color: var(--color-grey-4);
+  font-size: var(--headline);
+  position: absolute;
+  right: 10px;
+  bottom: 15px;
 }
