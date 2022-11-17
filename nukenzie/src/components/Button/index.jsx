@@ -20,12 +20,12 @@ export function ButtonIcon () {
 
   return (
     <button className="button button-icon" onMouseOver={
-      event => {
+      () => {
         setImg(whiteTrash);
       }
     }
     onMouseLeave={
-      event => {
+      () => {
         setImg(blackTrash);
       }
     }>
