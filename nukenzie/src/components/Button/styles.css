@@ -20,8 +20,6 @@
 }
 
 .button-secondary {
-  background-color: var(--color-grey-2);
-  color: var(--color-grey-4);
   font-size: var(--text-1);
   padding: 10.5px 15px;
 }
@@ -31,7 +29,12 @@
   color: var(--color-grey-1);
 }
 
-.button-secondary:active {
+[data-selected=false] {
+  background-color: var(--color-grey-2);
+  color: var(--color-grey-4);
+}
+
+[data-selected=true] {
   background-color: var(--color-primary-1);
   color: white;
 }

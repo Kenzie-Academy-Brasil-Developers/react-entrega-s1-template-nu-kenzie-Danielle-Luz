@@ -23,26 +23,28 @@ export default function Home() {
     },
   ]);
   const [filteredRegisters, setFilteredRegisters] = useState([...registers]);
+  const [seletedCategory, setSelectedCategory] = useState("Todos");
 
-  function setRegistersByFilter (event) {
-    let filteredCategory = event.target.innerText;
-  
+  function setRegistersByFilter(event) {
+    let button = event.target;
+    let filteredCategory = button.innerText;
+
     if (filteredCategory != "Todos") {
       filteredCategory = filteredCategory.substring(
         0,
         filteredCategory.length - 1
       );
-  
-      const registersAfterFilter = registers.filter(
-        (register) => {
-          return register.category == filteredCategory;
-        }
-      );
-  
+
+      const registersAfterFilter = registers.filter((register) => {
+        return register.category == filteredCategory;
+      });
+
       setFilteredRegisters([...registersAfterFilter]);
     } else {
       setFilteredRegisters([...registers]);
     }
+
+    setSelectedCategory(button.innerText);
   }
 
   return (
@@ -50,7 +52,12 @@ export default function Home() {
       <Header />
       <main className="main-content">
         <section className="payment-info">
-          <Form registers={registers} setRegisters={setRegisters} filteredRegisters={filteredRegisters} setFilteredRegisters={setFilteredRegisters} />
+          <Form
+            registers={registers}
+            setRegisters={setRegisters}
+            filteredRegisters={filteredRegisters}
+            setFilteredRegisters={setFilteredRegisters}
+          />
           <Total />
         </section>
         <section className="financial-resume-wrapper">
@@ -62,6 +69,7 @@ export default function Home() {
                   <ButtonSecondary
                     text={category}
                     onClick={setRegistersByFilter}
+                    seletedCategory={seletedCategory}
                   />
                 );
               })}
