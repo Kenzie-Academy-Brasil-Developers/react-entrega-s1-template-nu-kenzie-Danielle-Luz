@@ -7,6 +7,7 @@
   background-color: var(--color-grey-1);
   box-sizing: content-box;
   border: 1px solid transparent;
+  cursor: pointer;
   border-radius: var(--radius-1);
   flex-grow: 1;
   margin-top: 13px;
@@ -43,7 +44,7 @@
 .options {
   border-radius: var(--radius-1);
   border-top: 3px solid white;
-  bottom: -74px; 
+  bottom: -78px; 
   left: 0;
   overflow: hidden;
   position: absolute;
@@ -51,9 +52,15 @@
 }
 
 .option {
+  cursor: pointer;
   font-size: var(--text-1);
   padding: 10px;
   width: 100%;
+  transition: 0.3s;
+}
+
+.option:hover {
+  color: var(--color-grey-4);
 }
 
 [data-clicked=false] {
