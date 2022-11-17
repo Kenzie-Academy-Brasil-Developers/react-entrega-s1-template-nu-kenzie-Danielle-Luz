@@ -12,3 +12,7 @@
   display: flex;
   gap:36px;
 }
+
+.form [data-selected] {
+  width: 100%;
+}
