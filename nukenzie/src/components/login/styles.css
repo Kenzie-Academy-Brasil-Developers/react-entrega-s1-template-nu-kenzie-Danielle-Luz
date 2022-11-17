@@ -26,8 +26,9 @@
   font-size: var(--headline);
 }
 
-.logo {
+.main .logo {
   color: white;
+  font-size: var(--title-2);
 }
 
 
