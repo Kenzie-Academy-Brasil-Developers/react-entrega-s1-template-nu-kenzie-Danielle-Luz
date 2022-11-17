@@ -29,7 +29,7 @@ export default function Home() {
       <Header />
       <main className="main-content">
         <section className="payment-info">
-          <Form />
+          <Form registers={registers} setRegisters={setRegisters} />
           <Total />
         </section>
         <section className="financial-resume-wrapper">
