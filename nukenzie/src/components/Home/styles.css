@@ -1,0 +1,16 @@
+.page-wrapper {
+  height: 100vh;
+}
+
+.main-content {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 34px;
+  width: 100%;
+}
+
+.payment-info {
+  max-width: 363px;
+  width: 100%;
+}
