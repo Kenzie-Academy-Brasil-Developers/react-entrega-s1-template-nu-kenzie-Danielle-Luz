@@ -20,13 +20,13 @@
 
 .button-secondary {
   background-color: var(--color-grey-2);
-  color: var(--color-grey-3);
+  color: var(--color-grey-4);
   font-size: var(--text-1);
   padding: 10.5px 15px;
 }
 
 .button-secondary:hover {
-  background-color: var(--color-grey-2);
+  background-color: var(--color-grey-4);
   color: var(--color-grey-1);
 }
 
