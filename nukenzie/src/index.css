@@ -27,3 +27,8 @@
   --weight-3: 600;
   --weight-4: 400;
 }
+
+.container {
+  max-width: 978px;
+  width: 100%;
+}
