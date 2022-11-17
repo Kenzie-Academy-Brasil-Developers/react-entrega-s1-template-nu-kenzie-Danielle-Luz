@@ -10,8 +10,10 @@ export function Select({ options, label }) {
       <label className="label">{label}</label>
       <div
         className="select-wrapper"
-        onMouseLeave={() => {
+        onMouseLeave={(event) => {
           setVisibility(true);
+          
+          event.target.classList.remove("select-wrapper-focus");
         }}
       >
         <div
