@@ -10,16 +10,21 @@ export default function Form({registers, setRegisters}) {
 
       let data = {};
       const form = event.target;
-      const formElements = form.querySelectorAll("input");
+      const formElements = form.querySelectorAll("input, [data-selected]");
 
-      formElements.forEach(({name, value}) => {
-        data = {
-          ...data,
-          [name]: value
+      formElements.forEach((formElement) => {
+        if (formElement.tagName == "INPUT") {
+          data = {
+            ...data,
+            [formElement.name]: formElement.value
+          }
+        } else {
+          data = {
+            ...data,
+            "category": formElement.getAttribute("data-selected")
+          }
         }
       })
-
-      console.log(data);
     }}>
       <InputText
         name="title"

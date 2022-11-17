@@ -6,7 +6,7 @@ export function Select({ options, label }) {
   const [selected, setSelected] = useState(options[0]);
 
   return (
-    <article>
+    <article data-selected={selected}>
       <label className="label">{label}</label>
       <div
         className="select-wrapper"
