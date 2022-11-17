@@ -4,7 +4,11 @@ import blackTrash from "../../assets/imgs/black-trash.png";
 import { useState } from "react";
 
 export function ButtonPrimary({ text, onClick }) {
-  return <button className="button button-primary" onClick={onClick}>{text}</button>;
+  return (
+    <button className="button button-primary" onClick={onClick}>
+      {text}
+    </button>
+  );
 }
 
 export function ButtonSecondary({ text, onClick, seletedtype }) {

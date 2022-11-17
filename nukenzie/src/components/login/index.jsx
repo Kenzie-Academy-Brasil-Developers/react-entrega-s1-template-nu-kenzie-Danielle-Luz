@@ -3,7 +3,7 @@ import "./styles.css";
 import Banner from "../Banner";
 import { ButtonPrimary } from "../Button";
 
-export default function Login({isLogged, setLogged}) {
+export default function Login({ setLogged }) {
   return (
     <div className="wrapper">
       <main className="main">
@@ -12,7 +12,9 @@ export default function Login({isLogged, setLogged}) {
         </h1>
         <h2 className="title-1">Centralize o controle das suas finanças</h2>
         <p className="text-1">de forma rápida e segura</p>
-        <ButtonPrimary text="Iniciar" onClick={} />
+        <ButtonPrimary text="Iniciar" onClick={() => {
+          setLogged(true);
+        }} />
       </main>
       <Banner />
     </div>
