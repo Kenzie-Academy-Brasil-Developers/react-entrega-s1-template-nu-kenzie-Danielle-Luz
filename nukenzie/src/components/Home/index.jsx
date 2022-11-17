@@ -24,6 +24,27 @@ export default function Home() {
   ]);
   const [filteredRegisters, setFilteredRegisters] = useState([...registers]);
 
+  function setRegistersByFilter (event) {
+    let filteredCategory = event.target.innerText;
+  
+    if (filteredCategory != "Todos") {
+      filteredCategory = filteredCategory.substring(
+        0,
+        filteredCategory.length - 1
+      );
+  
+      const registersAfterFilter = registers.filter(
+        (register) => {
+          return register.category == filteredCategory;
+        }
+      );
+  
+      setFilteredRegisters([...registersAfterFilter]);
+    } else {
+      setFilteredRegisters([...registers]);
+    }
+  }
+
   return (
     <div className="page-wrapper">
       <Header />
@@ -40,26 +61,7 @@ export default function Home() {
                 return (
                   <ButtonSecondary
                     text={category}
-                    onClick={(event) => {
-                      let filteredCategory = event.target.innerText;
-
-                      if (filteredCategory != "Todos") {
-                        filteredCategory = filteredCategory.substring(
-                          0,
-                          filteredCategory.length - 1
-                        );
-
-                        const registersAfterFilter = registers.filter(
-                          (register) => {
-                            return register.category == filteredCategory;
-                          }
-                        );
-
-                        setFilteredRegisters([...registersAfterFilter]);
-                      } else {
-                        setFilteredRegisters([...registers]);
-                      }
-                    }}
+                    onClick={setRegistersByFilter}
                   />
                 );
               })}
