@@ -6,8 +6,10 @@ import { Select } from "../Select";
 function getFormData(form, registers) {
   const formElements = form.querySelectorAll("input, [data-selected]");
 
-  const lastRegisterId = registers[registers.length - 1] ? registers[registers.length - 1].id : 0;
-  let data = {id: lastRegisterId + 1};
+  const lastRegisterId = registers[registers.length - 1]
+    ? registers[registers.length - 1].id
+    : 0;
+  let data = { id: lastRegisterId + 1 };
 
   formElements.forEach((formElement) => {
     if (formElement.tagName == "INPUT") {
@@ -46,7 +48,7 @@ export default function Form({
   setRegisters,
   filteredRegisters,
   setFilteredRegisters,
-  seletedtype
+  seletedtype,
 }) {
   return (
     <form
@@ -63,6 +65,8 @@ export default function Form({
         );
 
         if (dataIsNotEmpty) {
+          const formElements = form.querySelectorAll("input");
+
           if (data.type == "Despesa") {
             data.value = data.value < 0 ? data.value : -data.value;
           }
@@ -75,6 +79,8 @@ export default function Form({
             setFilteredRegisters,
             data
           );
+
+          formElements.forEach((formElement) => (formElement.value = ""));
         } else {
           // toastfy
         }

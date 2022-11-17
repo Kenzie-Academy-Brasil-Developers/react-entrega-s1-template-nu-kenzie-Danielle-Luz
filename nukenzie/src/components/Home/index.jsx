@@ -68,7 +68,7 @@ export default function Home() {
             </h2>
           )}
           <section className="cards-container">
-            {registers.length == 0 ? (
+            {filteredRegisters.length == 0 ? (
               <>
                 <EmptyCard />
                 <EmptyCard />
