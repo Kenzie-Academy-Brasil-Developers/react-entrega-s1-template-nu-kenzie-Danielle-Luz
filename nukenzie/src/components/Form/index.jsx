@@ -24,9 +24,15 @@ export default function Form({registers, setRegisters}) {
             "category": formElement.getAttribute("data-selected")
           }
         }
-
-        setRegisters([...registers, data])
       })
+
+      const dataIsNotEmpty = Object.values(data).every((value) => value != "");
+
+      if (dataIsNotEmpty) {
+        setRegisters([...registers, data])
+      } else {
+        // toastfy
+      }
     }}>
       <InputText
         name="title"
