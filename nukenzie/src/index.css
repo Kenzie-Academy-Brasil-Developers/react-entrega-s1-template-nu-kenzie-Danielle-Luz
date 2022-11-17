@@ -7,6 +7,10 @@
   padding: 0;
 }
 
+body {
+  padding: 20px;
+}
+
 :root {
   --color-primary-1: #FD377E;
   --color-primary-2: #E34981;
@@ -20,7 +24,8 @@
   --title-2: 1.5rem;
   --title-3: 1.25rem;
   --headline: 1rem;
-  --text-1: 0.75rem;
+  --text-1: 0.875rem;
+  --text-2: 0.75rem;
 
   --weight-1: 800;
   --weight-2: 700;
