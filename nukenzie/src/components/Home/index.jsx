@@ -55,7 +55,7 @@ export default function Home() {
             filteredRegisters={filteredRegisters}
             setFilteredRegisters={setFilteredRegisters}
           />
-          <Total />
+          <Total registers={registers} />
         </section>
         <section className="financial-resume-wrapper">
           <article className="financial-resume">
