@@ -7,7 +7,12 @@ export function Card({ title, category, price, borderClass }) {
       <div className="card-header">
         <h2 className="title">{title}</h2>
         <div className="details">
-          <span className="price">{price}</span>
+          <span className="price">
+            {parseFloat(price).toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          </span>
           <ButtonIcon />
         </div>
       </div>
@@ -16,7 +21,7 @@ export function Card({ title, category, price, borderClass }) {
   );
 }
 
-export function EmptyCard () {
+export function EmptyCard() {
   return (
     <article className="card card-out">
       <div className="empty-text"></div>

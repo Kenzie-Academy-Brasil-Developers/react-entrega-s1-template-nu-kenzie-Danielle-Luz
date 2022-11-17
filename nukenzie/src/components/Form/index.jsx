@@ -82,7 +82,7 @@ export default function Form({
         info="Ex: Compra de roupas"
       />
       <div className="input-group">
-        <InputValue name="value" label="Valor" />
+        <InputValue name="price" label="Valor" />
         <Select options={["Entrada", "Despesa"]} label="Tipo de valor" />
       </div>
       <ButtonPrimary text="Inserir valor" />
