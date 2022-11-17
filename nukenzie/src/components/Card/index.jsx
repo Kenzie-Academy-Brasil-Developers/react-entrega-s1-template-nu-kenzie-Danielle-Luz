@@ -1,7 +1,7 @@
 import "./styles.css";
 import { ButtonIcon } from "../Button";
 
-export default function Card({ title, category, price }) {
+export function Card({ title, category, price }) {
   return (
     <article className="card">
       <div className="card-header">
@@ -12,6 +12,15 @@ export default function Card({ title, category, price }) {
         </div>
       </div>
       <span className="category">{category}</span>
+    </article>
+  );
+}
+
+export function EmptyCard () {
+  return (
+    <article className="card card-out">
+      <div className="empty-text"></div>
+      <div className="empty-text"></div>
     </article>
   );
 }

@@ -39,3 +39,18 @@
 .category {
   font-size: var(--text-2);
 }
+
+.empty-text {
+  background-color: var(--color-grey-2);
+  height: 13px;
+  width: 100%;
+}
+
+.empty-text:nth-child(1) {
+  max-width: 330.18px;
+  margin-bottom: 13.19px;
+}
+
+.empty-text:nth-child(2) {
+  max-width: 76.27px;
+}

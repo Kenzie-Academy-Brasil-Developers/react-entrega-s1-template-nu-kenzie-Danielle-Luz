@@ -4,10 +4,10 @@ import Header from "../Header";
 import Total from "../Total";
 import Form from "../Form";
 import { ButtonSecondary } from "../Button";
-import Card from "../Card";
+import { Card, EmptyCard } from "../Card";
 import { useState } from "react";
 
-export default function Home () {
+export default function Home() {
   const [register, setRegister] = useState([]);
 
   return (
@@ -18,6 +18,7 @@ export default function Home () {
           <Form />
           <Total />
         </section>
+        <section></section>
       </main>
     </div>
   );
