@@ -2,6 +2,7 @@
   background-color: transparent;
   border: none;
   border-radius: var(--radius-1);
+  cursor: pointer;
   font-weight: var(--weight-3);
   text-align: center;
   transition: 0.3s;
