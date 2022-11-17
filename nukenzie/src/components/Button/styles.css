@@ -18,19 +18,19 @@
   color: var(--color-grey-1);
 }
 
-.button-primary-2 {
+.button-secondary {
   background-color: var(--color-grey-2);
   color: var(--color-grey-3);
   font-size: var(--text-1);
   padding: 10.5px 15px;
 }
 
-.button-primary-2:hover {
+.button-secondary:hover {
   background-color: var(--color-grey-2);
   color: var(--color-grey-1);
 }
 
-.button-primary-2:active {
+.button-secondary:active {
   background-color: var(--color-primary-1);
   color: white;
 }
