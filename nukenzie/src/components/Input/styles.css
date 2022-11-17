@@ -18,6 +18,7 @@
   border: 2px solid transparent;
   color: var(--color-grey-4);
   margin-bottom: 10px;
+  -moz-appearance: textfield;
 }
 
 .input-text::placeholder {
@@ -39,9 +40,16 @@
 }
 
 .price-sign {
+  background-color: white;
   color: var(--color-grey-4);
   font-size: var(--headline);
   position: absolute;
   right: 10px;
-  bottom: 20px;
+  bottom: 23px;
 }
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
