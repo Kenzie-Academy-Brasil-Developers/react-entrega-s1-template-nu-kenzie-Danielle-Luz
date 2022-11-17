@@ -27,6 +27,7 @@ function getFormData(form, registers) {
 }
 
 function setFilteredRegistersList(
+  seletedtype,
   filteredRegisters,
   setFilteredRegisters,
   data
@@ -35,11 +36,7 @@ function setFilteredRegistersList(
     return register.type == data.type;
   });
 
-  const isFilteredByAll = filteredRegisters.some((register) => {
-    return register.type == data.type;
-  });
-
-  if (hasFilteredtype || isFilteredByAll) {
+  if (hasFilteredtype || seletedtype == "Todos") {
     setFilteredRegisters([...filteredRegisters, data]);
   }
 }
@@ -49,6 +46,7 @@ export default function Form({
   setRegisters,
   filteredRegisters,
   setFilteredRegisters,
+  seletedtype
 }) {
   return (
     <form
@@ -72,6 +70,7 @@ export default function Form({
           setRegisters([...registers, data]);
 
           setFilteredRegistersList(
+            seletedtype,
             filteredRegisters,
             setFilteredRegisters,
             data

@@ -43,6 +43,7 @@ export default function Home() {
             setRegisters={setRegisters}
             filteredRegisters={filteredRegisters}
             setFilteredRegisters={setFilteredRegisters}
+            seletedtype={seletedtype}
           />
           <Total registers={registers} />
         </section>
