@@ -3,17 +3,15 @@ import { ButtonIcon } from "../Button";
 
 export default function Card({ title, category, price }) {
   return (
-    <article>
-      <div>
-        <h2>{title}</h2>
-        <div>
-          <span>{price}</span>
+    <article className="card">
+      <div className="card-header">
+        <h2 className="title">{title}</h2>
+        <div className="details">
+          <span className="price">{price}</span>
           <ButtonIcon />
         </div>
       </div>
-      <span>
-        {category}
-      </span>
+      <span className="category">{category}</span>
     </article>
   );
 }
