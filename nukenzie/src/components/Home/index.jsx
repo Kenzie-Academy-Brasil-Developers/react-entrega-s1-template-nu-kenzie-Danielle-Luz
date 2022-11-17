@@ -85,10 +85,10 @@ export default function Home() {
                 <EmptyCard />
               </>
             ) : (
-              filteredRegisters.map((register, index) => {
+              filteredRegisters.map((register) => {
                 return (
                   <Card
-                    key={index}
+                    key={register.id}
                     borderClass={
                       register.type == "Entrada" ? "card-entry" : "card-out"
                     }

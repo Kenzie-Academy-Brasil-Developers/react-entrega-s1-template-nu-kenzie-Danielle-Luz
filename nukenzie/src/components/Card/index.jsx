@@ -13,7 +13,11 @@ export function Card({ description, type, value, borderClass }) {
               currency: "BRL",
             })}
           </span>
-          <ButtonIcon />
+          <ButtonIcon onClick={(event) => {
+            const card = event.target.closest(".card");
+
+            card.remove();
+          }} />
         </div>
       </div>
       <span className="type">{type}</span>

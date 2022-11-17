@@ -3,9 +3,11 @@ import { InputText, InputValue } from "../Input";
 import { ButtonPrimary } from "../Button";
 import { Select } from "../Select";
 
-function getFormData(form) {
-  let data = {};
+function getFormData(form, registers) {
   const formElements = form.querySelectorAll("input, [data-selected]");
+  
+  const lastRegisterId = registers[registers.length - 1] ? registers[registers.length].id : 0;
+  let data = {id: lastRegisterId + 1};
 
   formElements.forEach((formElement) => {
     if (formElement.tagName == "INPUT") {
@@ -56,7 +58,7 @@ export default function Form({
 
         const form = event.target;
 
-        const data = getFormData(form);
+        const data = getFormData(form, registers);
 
         const dataIsNotEmpty = Object.values(data).every(
           (value) => value != ""
