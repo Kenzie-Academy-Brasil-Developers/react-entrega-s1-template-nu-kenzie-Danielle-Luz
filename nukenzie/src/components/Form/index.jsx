@@ -76,7 +76,7 @@ export default function Form({
       }}
     >
       <InputText
-        name="title"
+        name="description"
         placeholder="Digite aqui sua descrição"
         label="Descrição"
         info="Ex: Compra de roupas"
