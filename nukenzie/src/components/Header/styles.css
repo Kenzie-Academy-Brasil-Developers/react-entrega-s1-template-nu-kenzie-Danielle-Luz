@@ -14,7 +14,7 @@
 }
 
 .logo {
-  font-size: var(--title-1);
+  font-size: var(--title-2);
   color: var(--color-grey-4);
   font-weight: var(--weight-1);
 }
