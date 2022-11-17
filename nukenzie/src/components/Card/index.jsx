@@ -1,14 +1,14 @@
 import "./styles.css";
 import { ButtonIcon } from "../Button";
 
-export function Card({ title, category, price, borderClass }) {
+export function Card({ description, type, value, borderClass }) {
   return (
     <article className={`card ${borderClass}`}>
       <div className="card-header">
-        <h2 className="title">{title}</h2>
+        <h2 className="description">{description}</h2>
         <div className="details">
-          <span className="price">
-            {parseFloat(price).toLocaleString("pt-BR", {
+          <span className="value">
+            {parseFloat(value).toLocaleString("pt-BR", {
               style: "currency",
               currency: "BRL",
             })}
@@ -16,7 +16,7 @@ export function Card({ title, category, price, borderClass }) {
           <ButtonIcon />
         </div>
       </div>
-      <span className="category">{category}</span>
+      <span className="type">{type}</span>
     </article>
   );
 }

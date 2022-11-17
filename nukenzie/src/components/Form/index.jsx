@@ -16,7 +16,7 @@ function getFormData(form) {
     } else {
       data = {
         ...data,
-        category: formElement.getAttribute("data-selected"),
+        type: formElement.getAttribute("data-selected"),
       };
     }
   });
@@ -29,15 +29,15 @@ function setFilteredRegistersList(
   setFilteredRegisters,
   data
 ) {
-  const hasFilteredCategory = filteredRegisters.every((register) => {
-    return register.category == data.category;
+  const hasFilteredtype = filteredRegisters.every((register) => {
+    return register.type == data.type;
   });
 
   const isFilteredByAll = filteredRegisters.some((register) => {
-    return register.category == data.category;
+    return register.type == data.type;
   });
 
-  if (hasFilteredCategory || isFilteredByAll) {
+  if (hasFilteredtype || isFilteredByAll) {
     setFilteredRegisters([...filteredRegisters, data]);
   }
 }
@@ -82,7 +82,7 @@ export default function Form({
         info="Ex: Compra de roupas"
       />
       <div className="input-group">
-        <InputValue name="price" label="Valor" />
+        <InputValue name="value" label="Valor" />
         <Select options={["Entrada", "Despesa"]} label="Tipo de valor" />
       </div>
       <ButtonPrimary text="Inserir valor" />

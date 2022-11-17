@@ -7,12 +7,12 @@ export function ButtonPrimary({ text }) {
   return <button className="button button-primary">{text}</button>;
 }
 
-export function ButtonSecondary({ text, onClick, seletedCategory }) {
+export function ButtonSecondary({ text, onClick, seletedtype }) {
   return (
     <button
       className="button button-secondary"
       onClick={onClick}
-      data-selected={text == seletedCategory ? true : false}
+      data-selected={text == seletedtype ? true : false}
     >
       {text}
     </button>

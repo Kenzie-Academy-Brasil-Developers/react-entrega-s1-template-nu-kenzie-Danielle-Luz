@@ -21,7 +21,7 @@
   justify-content: space-between;
 }
 
-.title {
+.description {
   font-weight: var(--weight-2);
   font-size: var(--headline);
 }
@@ -32,11 +32,11 @@
   gap: 10px 30px;
 }
 
-.price {
+.value {
   font-size: var(--text-2);
 }
 
-.category {
+.type {
   font-size: var(--text-2);
 }
 

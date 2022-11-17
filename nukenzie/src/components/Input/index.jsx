@@ -26,7 +26,7 @@ export function InputValue({ label, name }) {
           type="number"
           placeholder="1"
         />
-        <span className="price-sign">R$</span>
+        <span className="value-sign">R$</span>
       </div>
     </article>
   );

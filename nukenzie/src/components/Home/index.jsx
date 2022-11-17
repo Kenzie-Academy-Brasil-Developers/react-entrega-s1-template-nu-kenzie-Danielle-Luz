@@ -9,34 +9,31 @@ import { Card, EmptyCard } from "../Card";
 import { useState } from "react";
 
 export default function Home() {
-  const categorys = ["Todos", "Entradas", "Despesas"];
+  const types = ["Todos", "Entradas", "Despesas"];
   const [registers, setRegisters] = useState([
     {
-      title: "Trabalhar",
-      category: "Entrada",
-      price: 50.9,
+      description: "Trabalhar",
+      type: "Entrada",
+      value: 50.9,
     },
     {
-      title: "Estudar",
-      category: "Despesa",
-      price: 50.9,
+      description: "Estudar",
+      type: "Despesa",
+      value: 50.9,
     },
   ]);
   const [filteredRegisters, setFilteredRegisters] = useState([...registers]);
-  const [seletedCategory, setSelectedCategory] = useState("Todos");
+  const [seletedtype, setSelectedtype] = useState("Todos");
 
   function setRegistersByFilter(event) {
     let button = event.target;
-    let filteredCategory = button.innerText;
+    let filteredtype = button.innerText;
 
-    if (filteredCategory != "Todos") {
-      filteredCategory = filteredCategory.substring(
-        0,
-        filteredCategory.length - 1
-      );
+    if (filteredtype != "Todos") {
+      filteredtype = filteredtype.substring(0, filteredtype.length - 1);
 
       const registersAfterFilter = registers.filter((register) => {
-        return register.category == filteredCategory;
+        return register.type == filteredtype;
       });
 
       setFilteredRegisters([...registersAfterFilter]);
@@ -44,7 +41,7 @@ export default function Home() {
       setFilteredRegisters([...registers]);
     }
 
-    setSelectedCategory(button.innerText);
+    setSelectedtype(button.innerText);
   }
 
   return (
@@ -64,12 +61,12 @@ export default function Home() {
           <article className="financial-resume">
             <h3 className="financial-title">Resumo financeiro</h3>
             <div className="button-group">
-              {categorys.map((category) => {
+              {types.map((type) => {
                 return (
                   <ButtonSecondary
-                    text={category}
+                    text={type}
                     onClick={setRegistersByFilter}
-                    seletedCategory={seletedCategory}
+                    seletedtype={seletedtype}
                   />
                 );
               })}
@@ -93,11 +90,11 @@ export default function Home() {
                   <Card
                     key={index}
                     borderClass={
-                      register.category == "Entrada" ? "card-entry" : "card-out"
+                      register.type == "Entrada" ? "card-entry" : "card-out"
                     }
-                    title={register.title}
-                    category={register.category}
-                    price={register.price}
+                    description={register.description}
+                    type={register.type}
+                    value={register.value}
                   />
                 );
               })
