@@ -22,7 +22,7 @@ export default function Home() {
       price: 50.9,
     },
   ]);
-  const [filteredRegisters, setFilteredRegisters] = useState([]);
+  const [filteredRegisters, setFilteredRegisters] = useState([...registers]);
 
   return (
     <div className="page-wrapper">
@@ -37,7 +37,31 @@ export default function Home() {
             <h3 className="financial-title">Resumo financeiro</h3>
             <div className="button-group">
               {categorys.map((category) => {
-                return <ButtonSecondary text={category} />;
+                return (
+                  <ButtonSecondary
+                    text={category}
+                    onClick={(event) => {
+                      let filteredCategory = event.target.innerText;
+
+                      if (filteredCategory != "Todos") {
+                        filteredCategory = filteredCategory.substring(
+                          0,
+                          filteredCategory.length - 1
+                        );
+
+                        const registersAfterFilter = registers.filter(
+                          (register) => {
+                            return register.category == filteredCategory;
+                          }
+                        );
+
+                        setFilteredRegisters([...registersAfterFilter]);
+                      } else {
+                        setFilteredRegisters([...registers]);
+                      }
+                    }}
+                  />
+                );
               })}
             </div>
           </article>
@@ -54,7 +78,7 @@ export default function Home() {
                 <EmptyCard />
               </>
             ) : (
-              registers.map((register, index) => {
+              filteredRegisters.map((register, index) => {
                 return (
                   <Card
                     key={index}
@@ -64,28 +88,6 @@ export default function Home() {
                     title={register.title}
                     category={register.category}
                     price={register.price}
-                    onLoad={(event) => {
-                      const category = event.target;
-
-                      if (category.innerText == "Todos") {
-                        category.click();
-                      }
-                    }}
-                    onClick={(event) => {
-                      const filteredCategory = event.target.innerText;
-
-                      if (filteredCategory != "Todos") {
-                        const registersAfterFilter = registers.filter(
-                          (register) => {
-                            return register.category == filteredCategory;
-                          }
-                        );
-
-                        setFilteredRegisters([registersAfterFilter]);
-                      } else {
-                        setFilteredRegisters(registers);
-                      }
-                    }}
                   />
                 );
               })

@@ -9,9 +9,9 @@ export function ButtonPrimary ({text}) {
   );
 }
 
-export function ButtonSecondary ({text}) {
+export function ButtonSecondary ({text, onClick}) {
   return (
-    <button className="button button-secondary">{text}</button>
+    <button className="button button-secondary" onClick={onClick}>{text}</button>
   );
 }
 
