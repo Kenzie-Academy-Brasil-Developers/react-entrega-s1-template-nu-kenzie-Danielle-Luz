@@ -24,6 +24,8 @@ export default function Form({registers, setRegisters}) {
             "category": formElement.getAttribute("data-selected")
           }
         }
+
+        setRegisters([...registers, data])
       })
     }}>
       <InputText
