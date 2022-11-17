@@ -1,5 +1,7 @@
 import "./styles.css";
 
+import Banner from "../Banner";
+
 export default function Login() {
   return (
     <div className="wrapper">
@@ -11,6 +13,7 @@ export default function Login() {
         <p className="text-1">de forma rápida e segura</p>
         <button className="button button-primary">Iniciar</button>
       </main>
+      <Banner />
     </div>
   );
 }
