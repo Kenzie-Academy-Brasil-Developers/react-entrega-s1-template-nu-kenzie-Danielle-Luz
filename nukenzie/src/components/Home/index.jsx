@@ -8,7 +8,7 @@ import { Card, EmptyCard } from "../Card";
 
 import { useState } from "react";
 
-export default function Home() {
+export default function Home({setLogged}) {
   const types = ["Todos", "Entradas", "Despesas"];
   const [registers, setRegisters] = useState([]);
   const [filteredRegisters, setFilteredRegisters] = useState([...registers]);
@@ -35,7 +35,7 @@ export default function Home() {
 
   return (
     <div className="page-wrapper">
-      <Header />
+      <Header setLogged={setLogged} />
       <main className="main-content">
         <section className="payment-info">
           <Form

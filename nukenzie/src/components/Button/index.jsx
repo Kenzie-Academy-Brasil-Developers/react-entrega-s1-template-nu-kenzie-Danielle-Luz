@@ -3,8 +3,12 @@ import whiteTrash from "../../assets/imgs/trash-white.svg";
 import blackTrash from "../../assets/imgs/black-trash.png";
 import { useState } from "react";
 
-export function ButtonPrimary({ text }) {
-  return <button className="button button-primary">{text}</button>;
+export function ButtonPrimary({ text, onClick }) {
+  return (
+    <button className="button button-primary" onClick={onClick}>
+      {text}
+    </button>
+  );
 }
 
 export function ButtonSecondary({ text, onClick, seletedtype }) {
