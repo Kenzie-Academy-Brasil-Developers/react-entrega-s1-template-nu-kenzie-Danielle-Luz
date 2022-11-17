@@ -65,6 +65,10 @@ export default function Form({
         );
 
         if (dataIsNotEmpty) {
+          if (data.type == "Despesa") {
+            data.value = data.value < 0 ? data.value : -data.value;
+          }
+
           setRegisters([...registers, data]);
 
           setFilteredRegistersList(

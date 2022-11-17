@@ -10,20 +10,7 @@ import { useState } from "react";
 
 export default function Home() {
   const types = ["Todos", "Entradas", "Despesas"];
-  const [registers, setRegisters] = useState([
-    {
-      id: 0,
-      description: "Trabalhar",
-      type: "Entrada",
-      value: 50.9,
-    },
-    {
-      id: 1,
-      description: "Estudar",
-      type: "Despesa",
-      value: 50.9,
-    },
-  ]);
+  const [registers, setRegisters] = useState([]);
   const [filteredRegisters, setFilteredRegisters] = useState([...registers]);
   const [seletedtype, setSelectedtype] = useState("Todos");
 
