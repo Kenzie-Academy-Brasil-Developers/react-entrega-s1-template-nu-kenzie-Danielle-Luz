@@ -6,12 +6,14 @@ export function Select({ options, label }) {
   const [selected, setSelected] = useState(options[0]);
 
   return (
-    <article>
+    <article data-selected={selected}>
       <label className="label">{label}</label>
       <div
         className="select-wrapper"
-        onMouseLeave={() => {
+        onMouseLeave={(event) => {
           setVisibility(true);
+          
+          event.target.classList.remove("select-wrapper-focus");
         }}
       >
         <div
@@ -30,6 +32,7 @@ export function Select({ options, label }) {
           {options.map((option, index) => {
             return (
               <div
+                key={index}
                 className="option"
                 data-id={index}
                 value={option}
