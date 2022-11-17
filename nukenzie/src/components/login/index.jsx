@@ -12,9 +12,12 @@ export default function Login({ setLogged }) {
         </h1>
         <h2 className="title-1">Centralize o controle das suas finanças</h2>
         <p className="text-1">de forma rápida e segura</p>
-        <ButtonPrimary text="Iniciar" onClick={() => {
-          setLogged(true);
-        }} />
+        <ButtonPrimary
+          text="Iniciar"
+          onClick={() => {
+            setLogged(true);
+          }}
+        />
       </main>
       <Banner />
     </div>
