@@ -50,7 +50,7 @@ export default function Home() {
       <Header />
       <main className="main-content">
         <section className="payment-info">
-          <Form registers={registers} setRegisters={setRegisters} />
+          <Form registers={registers} setRegisters={setRegisters} filteredRegisters={filteredRegisters} setFilteredRegisters={setFilteredRegisters} />
           <Total />
         </section>
         <section className="financial-resume-wrapper">
@@ -67,7 +67,7 @@ export default function Home() {
               })}
             </div>
           </article>
-          {registers.length == 0 && (
+          {filteredRegisters.length == 0 && (
             <h2 className="empty-message">
               Você ainda não possui nenhum lançamento
             </h2>

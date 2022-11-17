@@ -24,7 +24,30 @@ function getFormData(form) {
   return data;
 }
 
-export default function Form({ registers, setRegisters }) {
+function setFilteredRegistersList(
+  filteredRegisters,
+  setFilteredRegisters,
+  data
+) {
+  const hasFilteredCategory = filteredRegisters.every((register) => {
+    return register.category == data.category;
+  });
+
+  const isFilteredByAll = filteredRegisters.some((register) => {
+    return register.category == data.category;
+  });
+
+  if (hasFilteredCategory || isFilteredByAll) {
+    setFilteredRegisters([...filteredRegisters, data]);
+  }
+}
+
+export default function Form({
+  registers,
+  setRegisters,
+  filteredRegisters,
+  setFilteredRegisters,
+}) {
   return (
     <form
       className="form"
@@ -41,6 +64,12 @@ export default function Form({ registers, setRegisters }) {
 
         if (dataIsNotEmpty) {
           setRegisters([...registers, data]);
+
+          setFilteredRegistersList(
+            filteredRegisters,
+            setFilteredRegisters,
+            data
+          );
         } else {
           // toastfy
         }
