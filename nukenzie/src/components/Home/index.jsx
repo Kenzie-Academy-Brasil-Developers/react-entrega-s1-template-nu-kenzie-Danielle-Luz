@@ -10,7 +10,19 @@ import { useState } from "react";
 
 export default function Home() {
   const categorys = ["Todos", "Entradas", "Despesas"];
-  const [registers, setRegisters] = useState([]);
+  const [registers, setRegisters] = useState([
+    {
+      title: "Trabalhar",
+      category: "Entrada",
+      price: 50.90
+    },
+    {
+      title: "Estudar",
+      category: "Entrada",
+      price: 50.90
+    },
+  ]);
+  const [filteredRegisters, setFilteredRegisters] = useState([]);
 
   return (
     <div className="page-wrapper">
@@ -42,12 +54,33 @@ export default function Home() {
                 <EmptyCard />
               </>
             ) : (
-              registers.map((register) => {
+              registers.map((register, index) => {
                 return (
                   <Card
+                    key={index}
                     title={register.title}
                     category={register.category}
                     price={register.price}
+                    onLoad={(event) => {
+                      const category = event.target;
+
+                      if (category.innerText == "Todos") {
+                        category.click();
+                      }
+                    }}
+                    onClick={(event) => {
+                      const filteredCategory = event.target.innerText;
+
+                      if (filteredCategory != "Todos") {
+                        const registersAfterFilter = registers.filter((register) => {
+                          return register.category == filteredCategory;
+                        });
+
+                        setFilteredRegisters([registersAfterFilter]);
+                      } else {
+                        setFilteredRegisters(registers);
+                      }
+                    }}
                   />
                 );
               })

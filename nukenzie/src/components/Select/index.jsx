@@ -30,6 +30,7 @@ export function Select({ options, label }) {
           {options.map((option, index) => {
             return (
               <div
+                key={index}
                 className="option"
                 data-id={index}
                 value={option}
