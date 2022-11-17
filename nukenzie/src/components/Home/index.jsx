@@ -14,12 +14,12 @@ export default function Home() {
     {
       title: "Trabalhar",
       category: "Entrada",
-      price: 50.90
+      price: 50.9,
     },
     {
       title: "Estudar",
-      category: "Entrada",
-      price: 50.90
+      category: "Despesa",
+      price: 50.9,
     },
   ]);
   const [filteredRegisters, setFilteredRegisters] = useState([]);
@@ -58,6 +58,9 @@ export default function Home() {
                 return (
                   <Card
                     key={index}
+                    borderClass={
+                      register.category == "Entrada" ? "card-entry" : "card-out"
+                    }
                     title={register.title}
                     category={register.category}
                     price={register.price}
@@ -72,9 +75,11 @@ export default function Home() {
                       const filteredCategory = event.target.innerText;
 
                       if (filteredCategory != "Todos") {
-                        const registersAfterFilter = registers.filter((register) => {
-                          return register.category == filteredCategory;
-                        });
+                        const registersAfterFilter = registers.filter(
+                          (register) => {
+                            return register.category == filteredCategory;
+                          }
+                        );
 
                         setFilteredRegisters([registersAfterFilter]);
                       } else {

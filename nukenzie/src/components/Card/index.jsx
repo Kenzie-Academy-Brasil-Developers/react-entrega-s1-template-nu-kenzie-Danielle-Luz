@@ -1,9 +1,9 @@
 import "./styles.css";
 import { ButtonIcon } from "../Button";
 
-export function Card({ title, category, price }) {
+export function Card({ title, category, price, borderClass }) {
   return (
-    <article className="card">
+    <article className={`card ${borderClass}`}>
       <div className="card-header">
         <h2 className="title">{title}</h2>
         <div className="details">
