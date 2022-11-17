@@ -1,9 +1,19 @@
 import "./styles.css";
 import { ButtonIcon } from "../Button";
 
-export function Card({ description, type, value, borderClass }) {
+export function Card({
+  cardId,
+  description,
+  type,
+  value,
+  borderClass,
+  registers,
+  setRegisters,
+  filteredRegisters,
+  setFilteredRegisters,
+}) {
   return (
-    <article className={`card ${borderClass}`}>
+    <article className={`card ${borderClass}`} data-id={cardId}>
       <div className="card-header">
         <h2 className="description">{description}</h2>
         <div className="details">
@@ -13,11 +23,24 @@ export function Card({ description, type, value, borderClass }) {
               currency: "BRL",
             })}
           </span>
-          <ButtonIcon onClick={(event) => {
-            const card = event.target.closest(".card");
+          <ButtonIcon
+            onClick={(event) => {
+              const removedCard = event.target.closest(".card");
+              const removedCardId = removedCard.getAttribute("data-id");
 
-            card.remove();
-          }} />
+              const newRegistersList = registers.filter(
+                (register) => register.id != removedCardId
+              );
+
+              const newFilteredRegistersList = filteredRegisters.filter(
+                (register) => register.id != removedCardId
+              );
+
+              setRegisters([...newRegistersList]);
+
+              setFilteredRegisters([...newFilteredRegistersList]);
+            }}
+          />
         </div>
       </div>
       <span className="type">{type}</span>

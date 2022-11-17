@@ -12,11 +12,13 @@ export default function Home() {
   const types = ["Todos", "Entradas", "Despesas"];
   const [registers, setRegisters] = useState([
     {
+      id: 0,
       description: "Trabalhar",
       type: "Entrada",
       value: 50.9,
     },
     {
+      id: 1,
       description: "Estudar",
       type: "Despesa",
       value: 50.9,
@@ -88,6 +90,7 @@ export default function Home() {
               filteredRegisters.map((register) => {
                 return (
                   <Card
+                    cardId={register.id}
                     key={register.id}
                     borderClass={
                       register.type == "Entrada" ? "card-entry" : "card-out"
@@ -95,6 +98,10 @@ export default function Home() {
                     description={register.description}
                     type={register.type}
                     value={register.value}
+                    registers={registers}
+                    setRegisters={setRegisters}
+                    filteredRegisters={filteredRegisters}
+                    setFilteredRegisters={setFilteredRegisters}
                   />
                 );
               })

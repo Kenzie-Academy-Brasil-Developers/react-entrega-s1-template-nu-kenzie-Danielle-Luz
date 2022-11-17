@@ -19,7 +19,7 @@ export function ButtonSecondary({ text, onClick, seletedtype }) {
   );
 }
 
-export function ButtonIcon() {
+export function ButtonIcon({ onClick }) {
   const [img, setImg] = useState(blackTrash);
 
   return (
@@ -31,6 +31,7 @@ export function ButtonIcon() {
       onMouseLeave={() => {
         setImg(blackTrash);
       }}
+      onClick={onClick}
     >
       <img src={img} alt="ícone de lixeira" />
     </button>

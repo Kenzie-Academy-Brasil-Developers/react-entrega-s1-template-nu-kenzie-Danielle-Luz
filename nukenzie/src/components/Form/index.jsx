@@ -5,8 +5,8 @@ import { Select } from "../Select";
 
 function getFormData(form, registers) {
   const formElements = form.querySelectorAll("input, [data-selected]");
-  
-  const lastRegisterId = registers[registers.length - 1] ? registers[registers.length].id : 0;
+
+  const lastRegisterId = registers[registers.length - 1] ? registers[registers.length - 1].id : 0;
   let data = {id: lastRegisterId + 1};
 
   formElements.forEach((formElement) => {

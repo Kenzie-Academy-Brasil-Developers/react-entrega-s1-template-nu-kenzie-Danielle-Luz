@@ -2,7 +2,7 @@ import "./styles.css";
 
 export default function Total({ registers }) {
   const total = registers.reduce(
-    (total, register) => (total += register.value),
+    (total, register) => (total += parseFloat(register.value)),
     0
   );
   return (
